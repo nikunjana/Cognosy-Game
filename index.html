@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmacognosy Mahjong</title>
+    <meta name="description" content="A tile-matching game to test your knowledge of common drug names and their biological sources in Pharmacognosy.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="start-screen" class="overlay">
+        <div class="modal-card">
+            <h2>Welcome to Pharmacognosy Mahjong</h2>
+            <p>Enter your username to begin the game and track your high scores.</p>
+            <input id="username-input" type="text" placeholder="Enter your username" maxlength="20" autocomplete="off" />
+            <button id="start-game-btn" class="primary-btn">Start Game</button>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <div class="header-content">
+                <h1>Pharmacognosy Mahjong</h1>
+                <p>Match the Drug with its Biological Source and Chemical Constituents!</p>
+            </div>
+            <div class="stats-panel">
+                <div class="stat-box">
+                    <span class="stat-label">Player</span>
+                    <span class="stat-value" id="player-name">Guest</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Matches</span>
+                    <span class="stat-value" id="matches-count">0 / 15</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Score</span>
+                    <span class="stat-value" id="score-count">0</span>
+                    <span class="stat-multiplier" id="score-multiplier">x1</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Time</span>
+                    <span class="stat-value" id="timer">00:00</span>
+                </div>
+            </div>
+        </header>
+
+        <aside class="leaderboard-card">
+            <div class="leaderboard-header">
+                <h2>Leaderboard</h2>
+                <p id="leaderboard-refresh-info">Last refreshed: --</p>
+            </div>
+            <ol id="leaderboard-list" class="leaderboard-list"></ol>
+        </aside>
+
+        <main>
+            <div id="game-board" class="game-board">
+                <!-- Tiles will be dynamically injected here by script.js -->
+            </div>
+            
+            <div id="victory-screen" class="victory-screen hidden">
+                <h2>Congratulations!</h2>
+                <p>You matched all the tiles correctly.</p>
+                <div class="victory-stats">
+                    <p>Final Score: <strong id="final-score">0</strong></p>
+                    <p>Time: <strong id="final-time">00:00</strong></p>
+                </div>
+                <button id="restart-btn" class="primary-btn">Play Again</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
