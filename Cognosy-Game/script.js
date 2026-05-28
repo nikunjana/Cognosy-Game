@@ -51,7 +51,7 @@ const pharmacognosyBank = [
     { drug: "Camphor", source: "Cinnamomum camphora", chemical: "Camphor" }
 ];
 
-const TRIPLETS_PER_GAME = 15;
+const TRIPLETS_PER_GAME = 10;
 let currentTiles = [];
 let selectedTiles = [];
 let matchesFound = 0;
@@ -101,7 +101,7 @@ function initGame() {
     victoryScreen.classList.add('hidden');
     gameBoard.innerHTML = '';
 
-    // Randomly select 15 triplets
+    // Randomly select 10 triplets
     const shuffledBank = [...pharmacognosyBank].sort(() => 0.5 - Math.random());
     const selectedGroups = shuffledBank.slice(0, TRIPLETS_PER_GAME);
 
