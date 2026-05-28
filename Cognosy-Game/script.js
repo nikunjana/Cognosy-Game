@@ -169,6 +169,7 @@ function handleTileClick(tile) {
             });
 
             setTimeout(() => {
+                selectedTiles.forEach(t => t.remove());
                 checkWinCondition();
                 isAnimating = false;
                 selectedTiles = [];
